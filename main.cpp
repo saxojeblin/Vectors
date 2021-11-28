@@ -16,6 +16,7 @@ int main()
     Name_value tempNameValue;
     string tempName;
     int tempVal;
+    bool inputError = false;
 
     cout << "Note: To finish input, enter 'NoName 0'." << endl;
     while(1)
@@ -28,7 +29,21 @@ int main()
         }
         tempNameValue.name = tempName;
         tempNameValue.value = tempVal;
-        names.push_back(tempNameValue);
+        for (int i = 0; i<names.size(); i++)
+        {
+            if (names[i].name == tempName)
+            {
+                inputError = true;
+            }
+        }
+        if (!inputError)
+        {
+            names.push_back(tempNameValue);
+        }
+        else {
+            cout << "Input Error: Duplicate names are not permitted." << endl;
+            inputError = false;
+        }
     }
 
     cout << "\nAll Pairs:" << endl;
