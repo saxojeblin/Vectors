@@ -5,14 +5,9 @@
 
 #include <iostream>
 #include "std_lib_facilities.h"
+#include "Name_Value.h"
 
 using namespace std;
-
-class Name_value {
-    public:
-        string name;
-        int value;
-};
 
 int main() 
 {
@@ -36,6 +31,7 @@ int main()
         names.push_back(tempNameValue);
     }
 
+    cout << "\nAll Pairs:" << endl;
     for (int i = 0; i<names.size(); i++)
     {
         cout << names[i].name << "," << names[i].value << endl;
